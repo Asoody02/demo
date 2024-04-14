@@ -1,3 +1,4 @@
+import 'package:demo_poll/Screens/main_activity_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_poll/Providers/authentication_provider.dart';
@@ -7,7 +8,7 @@ import 'package:demo_poll/Providers/fetch_polls_provider.dart';
 import 'package:demo_poll/Screens/splash_screen.dart';
 import 'package:demo_poll/firebase_options.dart';
 import 'package:provider/provider.dart';
-
+import 'package:demo_poll/Styles/customTheme.dart';
 import 'Screens/BottomNavPages/Home/home_page.dart';
 
 void main() async {
@@ -36,8 +37,9 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (context) => DbProvider()),
         ChangeNotifierProvider(create: (context) => FetchPollsProvider()),
       ],
-      child: const MaterialApp(
-        home: SplashScreen(),
+      child: MaterialApp(
+        theme: customTheme,
+        home: SplashScreen(), //SplashScreen()
       ),
     );
   }

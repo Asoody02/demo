@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                                               const EdgeInsets.all(0),
                                           leading: CircleAvatar(
                                             backgroundImage: NetworkImage(
-                                                author["profileImage"]),
+                                                author["profileImage"]?? 'default_image_url_here'),
                                           ),
                                           title: Text(author["name"]),
                                           subtitle: Text(DateFormat.yMEd()

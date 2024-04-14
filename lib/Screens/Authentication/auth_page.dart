@@ -5,6 +5,7 @@ import 'package:demo_poll/Providers/authentication_provider.dart';
 import 'package:demo_poll/Screens/main_activity_page.dart';
 import 'package:demo_poll/Utils/message.dart';
 import 'package:demo_poll/Utils/router.dart';
+import 'package:demo_poll/Styles/customTheme.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -34,6 +35,9 @@ class _AuthPageState extends State<AuthPage> {
                 controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(labelText: 'Password'),
+              ),
+              SizedBox (
+                height: 20
               ),
               ElevatedButton(
                 onPressed: () async {
