@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969962080511",
+    "project_id": "pollapp2024",
+    "storage_bucket": "pollapp2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969962080511:android:a0f86e153f95123c04e4ca",
+        "android_client_info": {
+          "package_name": "com.google.firebase.presents.demo_poll"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2hbgIgTVH4V-kb_kPOMtzfQ_CeD7sI6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
