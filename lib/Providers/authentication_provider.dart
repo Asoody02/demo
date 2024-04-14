@@ -19,7 +19,7 @@ class AuthProvider extends ChangeNotifier {
   }
 
   // Register with email and password
-  Future<UserCredential?> registerWithEmailPassword(String email, String password) async {
+  Future<UserCredential?> signUpWithEmailPassword(String email, String password) async {
     try {
       final UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,

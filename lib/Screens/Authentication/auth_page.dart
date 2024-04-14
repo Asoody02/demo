@@ -1,3 +1,4 @@
+import 'package:demo_poll/Screens/Authentication/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:demo_poll/Providers/authentication_provider.dart';
@@ -50,6 +51,15 @@ class _AuthPageState extends State<AuthPage> {
                   }
                 },
                 child: Text('Sign In'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SignUpPage()),
+                  );
+                },
+                child: Text('Sign Up'),
               ),
             ],
           ),
