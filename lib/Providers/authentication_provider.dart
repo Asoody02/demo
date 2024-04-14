@@ -11,6 +11,11 @@ class AuthProvider extends ChangeNotifier {
         email: email,
         password: password,
       );
+    print("User ID: ${userCredential.user?.uid}");
+    print("Email: ${userCredential.user?.email}");
+    print("Display Name: ${userCredential.user?.displayName}");
+    print("Photo URL: ${userCredential.user?.photoURL}");
+
       return userCredential;
     } catch (e) {
       print(e);

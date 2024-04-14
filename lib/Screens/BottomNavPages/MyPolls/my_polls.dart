@@ -74,9 +74,8 @@ class _MyPollsState extends State<MyPolls> {
                                         ListTile(
                                           contentPadding:
                                               const EdgeInsets.all(0),
-                                          leading: CircleAvatar(
-                                            backgroundImage: NetworkImage(
-                                                author["profileImage"]),
+                                          leading: const CircleAvatar(
+                                            backgroundImage:AssetImage("assets/default_profile.png"),
                                           ),
                                           title: Text(author["name"]),
                                           subtitle: Text(DateFormat.yMEd()
