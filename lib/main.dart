@@ -10,6 +10,7 @@ import 'package:demo_poll/firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'package:demo_poll/Styles/customTheme.dart';
 import 'Screens/BottomNavPages/Home/home_page.dart';
+import 'package:demo_poll/notifapi.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await NotifApi().sendNotif();
   runApp(const MyApp());
 }
 
