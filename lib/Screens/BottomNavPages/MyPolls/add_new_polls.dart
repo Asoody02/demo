@@ -20,9 +20,24 @@ class _AddPollPageState extends State<AddPollPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Add New Poll"),
+        appBar: AppBar( //top app bar
+        surfaceTintColor: Color(0xFFC7E7F3),
+        shadowColor: Colors.grey,
+        backgroundColor: const Color(0xFF5AC7F0),
+        centerTitle: true,
+        title: Title(
+          color: Colors.white,
+          child: const Text(
+            'Add New Poll',
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w700,
+            )
+          )
+        )
       ),
+
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -37,7 +52,8 @@ class _AddPollPageState extends State<AddPollPage> {
                     formWidget(option1, label: "Option 1"),
                     formWidget(option2, label: "Option 2"),
                     formWidget(duration, label: "Duration", onTap: () {
-                      showDatePicker(
+                      showDatePicker( //calendar
+                      
                               context: context,
                               initialDate: DateTime.now(),
                               firstDate: DateTime.now(),
@@ -93,12 +109,17 @@ class _AddPollPageState extends State<AddPollPage> {
                           decoration: BoxDecoration(
                               color: db.status == true
                                   ? AppColors.grey
-                                  : AppColors.primaryColor,
+                                  :  Color(0xFF5AC7F0),
                               borderRadius: BorderRadius.circular(10)),
                           alignment: Alignment.center,
                           child: Text(db.status == true
                               ? "Please wait..."
-                              : "Post Poll"),
+                              : "Post Poll",
+                               style: TextStyle(
+                                color: db.status == true ? Colors.white : Colors.white, // Conditional color change
+                                fontSize: 16, // Example size, adjust as needed
+                              fontWeight: FontWeight.bold, // Example weight, adjust as needed
+                            ),),
                         ),
                       );
                     })

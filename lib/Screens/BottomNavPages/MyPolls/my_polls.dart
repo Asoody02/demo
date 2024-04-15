@@ -24,6 +24,26 @@ class _MyPollsState extends State<MyPolls> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+       appBar: AppBar( //top app bar
+        surfaceTintColor: Color(0xFFC7E7F3),
+        shadowColor: Colors.grey,
+        automaticallyImplyLeading: false,
+        backgroundColor: const Color(0xFF5AC7F0),
+        centerTitle: true,
+        title: Title(
+          color: Colors.white,
+          child: const Text(
+            'Your Polls',
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w700,
+            )
+          )
+        )
+      ),
+
       body: Consumer<FetchPollsProvider>(builder: (context, polls, child) {
         if (_isFetched == false) {
           polls.fetchUserPolls();
@@ -59,14 +79,28 @@ class _MyPollsState extends State<MyPolls> {
 
                                   List<dynamic> options = poll["options"];
 
-                                  return Container(
-                                    margin: const EdgeInsets.only(bottom: 10),
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                        border:
-                                            Border.all(color: AppColors.grey),
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
+                                  return Container( //box begins here
+                                        margin: const EdgeInsets.only(bottom: 10),
+                                        padding: const EdgeInsets.all(12),
+                                        decoration: BoxDecoration(
+                                             boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.grey.withOpacity(0.5),
+                                                offset: const Offset(
+                                                  0,
+                                                  0,
+                                                ),
+                                                blurRadius: 10.0,
+                                                spreadRadius: 0.5,
+                                              ), //BoxShadow
+                                            ],
+                                            gradient: LinearGradient(
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                              colors: [Color(0xFFC7E7F3), Color(0xFF5AC7F0)]),
+                                            color: Color(0xFFC7E7F3),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -75,6 +109,7 @@ class _MyPollsState extends State<MyPolls> {
                                           contentPadding:
                                               const EdgeInsets.all(0),
                                           leading: const CircleAvatar(
+                                            backgroundColor: Color(0xFF113143),
                                             backgroundImage:AssetImage("assets/default_profile.png"),
                                           ),
                                           title: Text(author["name"]),
@@ -135,6 +170,8 @@ class _MyPollsState extends State<MyPolls> {
                                                   child: Stack(
                                                     children: [
                                                       LinearProgressIndicator(
+                                                        color: Color(0xFF5AC7F0),
+                                                        borderRadius: BorderRadius.vertical(top: Radius.circular(12), bottom: Radius.circular(12)),
                                                         minHeight: 30,
                                                         value: dataOption[
                                                                 "percent"] /
@@ -180,6 +217,8 @@ class _MyPollsState extends State<MyPolls> {
         );
       }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF5AC7F0),
+        foregroundColor: Colors.white, 
         onPressed: () {
           nextPage(context, const AddPollPage());
         },

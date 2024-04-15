@@ -158,4 +158,14 @@ inputDecorationTheme: InputDecorationTheme(
     }),
     overlayColor: MaterialStateProperty.all(Colors.blue.withOpacity(0.1)),
   ),
+  datePickerTheme: DatePickerThemeData(
+    backgroundColor: Color(0xFFC7E7F3),
+    headerForegroundColor: Color(0xFF113143),
+   dayBackgroundColor: MaterialStateProperty.resolveWith((states) {
+              if (states.contains(MaterialState.selected)) {
+                return Color(0xFF5AC7F0);
+              }
+              return Color(0xFFC7E7F3);
+            }),
+  ),
 );

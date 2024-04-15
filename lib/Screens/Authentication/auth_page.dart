@@ -1,4 +1,5 @@
 import 'package:demo_poll/Screens/Authentication/sign_up.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:demo_poll/Providers/authentication_provider.dart';
@@ -56,16 +57,40 @@ class _AuthPageState extends State<AuthPage> {
                 },
                 child: Text('Sign In'),
               ),
-              Text("Don't have an account?"),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignUpPage()),
-                  );
-                },
-                child: Text('Sign Up'),
+              SizedBox(
+                height:10
               ),
+              RichText(
+               text: TextSpan(
+                  style: TextStyle(fontSize: 16, color: Color(0xFF113143)), // This uses the default text style of the surrounding Text.
+                  children: <TextSpan>[
+                    TextSpan(text: "Don't have an account? "), 
+                  TextSpan(
+                    text: 'Sign up.', // Clickable part
+                      style: TextStyle(color:  Color(0xFF5AC7F0), decoration: TextDecoration.underline), // Styling to indicate it's clickable.
+                      recognizer: TapGestureRecognizer()..onTap = () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignUpPage()),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              )
+
+
+            //original sign UP button
+
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(builder: (context) => const SignUpPage()),
+              //     );
+              //   },
+              //   child: Text('Sign Up'),
+              // ),
             ],
           ),
         ),

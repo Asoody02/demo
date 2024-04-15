@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
 
                                       List<dynamic> options = poll["options"];
 
-                                      return Container(
+                                      return Container( //box begins here
                                         margin: const EdgeInsets.only(bottom: 10),
                                         padding: const EdgeInsets.all(12),
                                         decoration: BoxDecoration(
