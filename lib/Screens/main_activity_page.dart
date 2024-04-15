@@ -20,6 +20,10 @@ class _MainActivityPageState extends State<MainActivityPage> {
       return Scaffold(
         body: _pages[nav.currentIndex],
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.shifting, //shifting
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Color(0xFFC7E7F3),
+
           items: _items,
           currentIndex: nav.currentIndex,
           onTap: (value) {
@@ -33,8 +37,8 @@ class _MainActivityPageState extends State<MainActivityPage> {
   List<Widget> _pages = [HomePage(), MyPolls(), AccountPage()];
 
   List<BottomNavigationBarItem> _items = const [
-    BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-    BottomNavigationBarItem(icon: Icon(Icons.poll), label: "My Polls"),
-    BottomNavigationBarItem(icon: Icon(Icons.person), label: "Accounts"),
+    BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home", backgroundColor: Color(0xFF5AC7F0),),
+    BottomNavigationBarItem(icon: Icon(Icons.poll), label: "My Polls", backgroundColor: Color(0xFF5AC7F0),),
+    BottomNavigationBarItem(icon: Icon(Icons.person), label: "Accounts", backgroundColor: Color(0xFF5AC7F0)),
   ];
 }

@@ -56,6 +56,7 @@ class _AuthPageState extends State<AuthPage> {
                 },
                 child: Text('Sign In'),
               ),
+              Text("Don't have an account?"),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(

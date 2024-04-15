@@ -30,8 +30,7 @@ class DbProvider extends ChangeNotifier {
         "authorId": user!.uid,
         "author": {
           "uid": user!.uid,
-          "profileImage": user!.photoURL,
-          "name": user!.displayName,
+          "name": user!.email,
         },
         "dateCreated": DateTime.now(),
         "poll": {

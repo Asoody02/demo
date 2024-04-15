@@ -1,5 +1,5 @@
+//MIDDLE TAB
 import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -86,9 +86,8 @@ class _IndividualPollsPageState extends State<IndividualPollsPage> {
                                           ListTile(
                                             contentPadding:
                                                 const EdgeInsets.all(0),
-                                            leading: CircleAvatar(
-                                              backgroundImage: NetworkImage(
-                                                  author["profileImage"]),
+                                            leading: const CircleAvatar(
+                                              backgroundImage: AssetImage("assets/default_profile.png"),
                                             ),
                                             title: Text(author["name"]),
                                             subtitle: Text(DateFormat.yMEd()
